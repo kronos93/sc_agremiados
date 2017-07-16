@@ -21,4 +21,4 @@ Route::get('/agremiado',function(){
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/menu', 'HomeController@index')->name('menu');
