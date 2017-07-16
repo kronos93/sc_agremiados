@@ -96,7 +96,7 @@ let config = function(env) {
             new HtmlWebpackPlugin({
                 template: './template/template.html',
                 title: "<?= $title ?>",
-                filename: './template/template.html',
+                filename: '../resources/views/templates/template.blade.php',
             }),
             new CleanWebpackPlugin('./public/css/*'),
             new CleanWebpackPlugin('./public/fonts/*'),

@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-        <%= htmlWebpackPlugin.options.title %>
     </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -413,7 +412,7 @@
         <div class="control-sidebar-bg"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</body>
+<script type="text/javascript" src="http://scagremiados.local/js/app.bundle.js"></script><script type="text/javascript" src="http://scagremiados.local/js/vendor.bundle.js"></script></body>
 
 </html>
 <!-- split stop -->
