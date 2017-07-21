@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layouts.base')
+@section('title', 'Iniciar sesión')
 @section('content')
 <div class="container">
     <div class="row">

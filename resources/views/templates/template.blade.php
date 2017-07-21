@@ -1,18 +1,17 @@
-<!-- split header.html -->
+<!-- split header.blade.php -->
 <!DOCTYPE html>
 <html lang="es-MX">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>
-    </title>
+    <title>@yield('title')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-</head>
+<meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#fff"><meta name="application-name" content="Webpack App"><link rel="apple-touch-icon" sizes="57x57" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-icon-180x180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Webpack App"><link rel="icon" type="image/png" sizes="32x32" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/favicon-16x16.png"><link rel="shortcut icon" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/favicon.ico"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-320x460.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-640x920.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-640x1096.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-750x1294.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-1182x2208.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-1242x2148.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-748x1024.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-768x1004.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-1496x2048.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="http://scagremiados.local/icons-7d5ca651f07e4e398d841d7dab8c447b/apple-touch-startup-image-1536x2008.png"></head>
 
-<body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
+<body @if (!Auth::guest()) class="hold-transition skin-blue sidebar-mini" style="height: auto;" @else class="skin-blue sidebar-collapse" @endif>
+    <div class="wrapper" @if (!Auth::guest()) style="height: auto;" @endif>
         <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
@@ -20,15 +19,18 @@
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
+
                 <span class="logo-lg"><b>Admin</b>LTE</span>
             </a>
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
+                @if (!Auth::guest())
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
                 </a>
+
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
@@ -49,7 +51,7 @@
                                             <a href="#">
                                                 <div class="pull-left">
                                                     <!-- User Image -->
-                                                    <img src="" class="img-circle" alt="User Image">
+                                                    <img src="http://scagremiados.local/img/default.png" class="img-circle" alt="User Image">
                                                 </div>
                                                 <!-- Message title and timestamp -->
                                                 <h4>
@@ -135,32 +137,31 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="" class="user-image" alt="User Image">
+                                <img src="http://scagremiados.local/img/default.png" class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">@include('layouts.partials.fullname')</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="" class="img-circle" alt="User Image">
+                                    <img src="http://scagremiados.local/img/default.png" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        @include('layouts.partials.fullname')
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
                                 <li class="user-body">
                                     <div class="row">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
+                                        <div class="col-xs-12 text-center">
+                                            <a href="#"><small>Miembro desde {{ Auth::user()->created_at }}</small></a>
                                         </div>
-                                        <div class="col-xs-4 text-center">
+                                        <!-- <div class="col-xs-4 text-center">
                                             <a href="#">Sales</a>
                                         </div>
                                         <div class="col-xs-4 text-center">
                                             <a href="#">Friends</a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <!-- /.row -->
                                 </li>
@@ -170,7 +171,10 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
                                     </div>
                                 </li>
                             </ul>
@@ -181,8 +185,11 @@
                         </li>
                     </ul>
                 </div>
+                @endif
             </nav>
+
         </header>
+
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
 
@@ -192,10 +199,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="" class="img-circle" alt="User Image">
+                        <img src="http://scagremiados.local/img/default.png" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>@include('layouts.partials.fullname')</p>
                         <!-- Status -->
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
@@ -217,7 +224,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+                    <li class="active"><a href="{{ route('register') }}"><i class="fa fa-link"></i> <span>Usuarios</span></a></li>
                     <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
                     <li class="treeview">
                         <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
@@ -239,7 +246,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
+            <!-- <section class="content-header">
                 <h1>
                     Page Header
                     <small>Optional description</small>
@@ -248,7 +255,7 @@
                     <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
                     <li class="active">Here</li>
                 </ol>
-            </section>
+            </section> -->
 
             <!-- Main content -->
             <section class="content">
@@ -318,7 +325,7 @@
                     </tbody>
                     <tfoot></tfoot>
                 </table>
-                <!-- split footer.html -->
+                <!-- split footer.blade.php -->
             </section>
             <!-- /.content -->
         </div>
@@ -328,10 +335,10 @@
         <footer class="main-footer">
             <!-- To the right -->
             <div class="pull-right hidden-xs">
-                Anything you want
+
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; {{  \Carbon\Carbon::now()->format('Y') }} <a href="#">CooxToWeb</a>.</strong> Todos los derechos reservados.
         </footer>
 
         <!-- Control Sidebar -->
@@ -412,7 +419,7 @@
         <div class="control-sidebar-bg"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://scagremiados.local/js/app.bundle.js"></script><script type="text/javascript" src="http://scagremiados.local/js/vendor.bundle.js"></script></body>
+<script type="text/javascript" src="http://scagremiados.local/js/vendor.bundle.js"></script><script type="text/javascript" src="http://scagremiados.local/js/app.bundle.js"></script></body>
 
 </html>
 <!-- split stop -->

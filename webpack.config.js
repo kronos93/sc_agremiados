@@ -29,7 +29,7 @@ let config = function(env) {
     /*
      **Archivos de configuración de gulp
      */
-    /* let GulpWebpackSplitHtmlPlugin = require('./build/plugins/GulpWebpackSplitHtmlPlugin'); */
+    let GulpWebpackSplitHtmlPlugin = require('./resources/assets/js/build/plugins/GulpWebpackSplitHtmlPlugin');
 
     return {
         context: resolve(__dirname, 'resources/assets'), //Contexto de entrada de archivos
@@ -93,14 +93,24 @@ let config = function(env) {
         plugins: [
             extractCSS,
             extractSASS,
+            new FaviconsWebpackPlugin({
+                logo: './icon.png',
+
+            }),
             new HtmlWebpackPlugin({
                 template: './template/template.html',
                 title: "<?= $title ?>",
                 filename: '../resources/views/templates/template.blade.php',
             }),
+            //Exporta módulos compartidos por entrada
+            new webpack.optimize.CommonsChunkPlugin({
+                name: "vendor",
+            }),
             new CleanWebpackPlugin('./public/css/*'),
+            new CleanWebpackPlugin('./public/icons/*'),
             new CleanWebpackPlugin('./public/fonts/*'),
             new CleanWebpackPlugin('./public/js/*'),
+            new GulpWebpackSplitHtmlPlugin(),
         ],
         stats: (isProduction) ? 'errors-only' : 'detailed',
     };

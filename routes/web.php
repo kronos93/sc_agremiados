@@ -12,13 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->to('/menu');
 });
 
+Route::resource('agremiados','MembersController');
 
-Route::get('/agremiado',function(){
-    return view('agremiado');
-});
 Auth::routes();
 
 Route::get('/menu', 'HomeController@index')->name('menu');

@@ -1,1 +1,1 @@
- @include('templates.template');
+ @include('templates.template')

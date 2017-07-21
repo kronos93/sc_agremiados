@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    /**
+     * Palabras: claves
+     * get
+     * Attribute
+     * @return void
+     */
+    public function getFullNameAttribute(){
+        return $this->name . ' ' . $this->f_last_name . ' ' . $this->m_last_name;
+    }
 }
