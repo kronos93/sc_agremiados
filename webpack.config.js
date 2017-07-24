@@ -41,8 +41,8 @@ let config = function(env) {
                 'bootstrap/dist/js/bootstrap.js', 'admin-lte/dist/js/app.js'
             ],
             app: [
-
                 './sass/app.scss',
+                './js/app.js',
             ],
 
         },
@@ -91,6 +91,7 @@ let config = function(env) {
             ]
         },
         plugins: [
+
             extractCSS,
             extractSASS,
             new FaviconsWebpackPlugin({

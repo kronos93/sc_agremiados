@@ -5,9 +5,12 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>@yield('title')</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <title>@yield('title')</title>
+
 </head>
 
 <body @if (!Auth::guest()) class="hold-transition skin-blue sidebar-mini" style="height: auto;" @else class="skin-blue sidebar-collapse" @endif>
@@ -224,7 +227,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="{{ route('register') }}"><i class="fa fa-link"></i> <span>Usuarios</span></a></li>
+                    <li class="active"><a href="usuarios"><i class="fa fa-link"></i> <span>Usuarios</span></a></li>
                     <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
                     <li class="treeview">
                         <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

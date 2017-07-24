@@ -26,6 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    protected $appends = array('last_name');
     /**
      * Palabras: claves
      * get
@@ -34,5 +35,8 @@ class User extends Authenticatable
      */
     public function getFullNameAttribute(){
         return $this->name . ' ' . $this->f_last_name . ' ' . $this->m_last_name;
+    }
+    public function getLastNameAttribute(){
+        return $this->f_last_name . ' ' . $this->m_last_name;
     }
 }

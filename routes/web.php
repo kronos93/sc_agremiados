@@ -16,7 +16,11 @@ Route::get('/', function () {
 });
 
 Route::resource('agremiados','MembersController');
-
+/* Route::resource('usuarios','UsersController'); */
+Route::get('usuarios',['as'=>'usuarios.index','uses'=>'UsersController@index']);
+Route::get('usuarios/{id}',['as'=>'usuarios.show','uses'=>'UsersController@show']);
+Route::post('usuarios/store',['as'=>'usuarios.store','uses'=>'UsersController@store']);
+//Route::post('users/create',['as'=>'users.store','uses'=>'UserController@store']);
 Auth::routes();
 
 Route::get('/menu', 'HomeController@index')->name('menu');
