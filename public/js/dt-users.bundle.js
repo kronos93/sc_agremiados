@@ -6,7 +6,7 @@ webpackJsonp([1],{
 "use strict";
 
 
-var _Config = __webpack_require__(118);
+var _Config = __webpack_require__(41);
 
 var _Config2 = _interopRequireDefault(_Config);
 
@@ -16,9 +16,11 @@ var config = new _Config2.default();
 var btnEditar = '\n    <button \n            class="btn btn-success" \n            data-toggle="modal"\n            data-target="#frmUserModal"\n            data-modal-title="Editar usuario"\n            data-option="edit">\n            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar\n    </button>';
 var classSpinner = 'fa-circle-o-notch fa-spin fa-fw';
 var classSave = 'fa-check-circle';
+
 var dt_user = $('#dt-users').DataTable({
     "ajax": config.url() + 'usuarios/show', //URL de datos
     "columns": [//Atributos para la tabla
+
     {
         "data": "name"
     }, {
@@ -28,12 +30,26 @@ var dt_user = $('#dt-users').DataTable({
     }, {
         "data": '',
         defaultContent: btnEditar
+    }],
+    "columnDefs": [{
+        //"targets": [2],
+        //"visible": false,
+        //"searchable": false
+    }, {
+        "targets": [-1],
+        "orderable": false
     }]
 });
+
 $('#frmUserModal').on('show.bs.modal', function (e) {
-    //Limpiar formulario
+    //Instanciar form
     var form = $(this).find('form');
+    //Limpiar formulario
     form[0].reset();
+    //Limpiar clases
+    $(this).find('.form-group').removeClass('has-error').removeClass('has-success');
+    //Remover mensajes
+    $('.form-group').find('.help-block').remove();
     //Asignar titulo
     var modal = this.id;
     var btnModal = e.relatedTarget;
@@ -80,8 +96,13 @@ $('#frm-user').on('submit', function (e) {
                 input.next().remove();
                 input.after('\n                                <span class="help-block">\n                                    <strong>' + response.data[key] + '</strong>\n                                </span>\n                                ').closest('.form-group').removeClass('has-success').addClass('has-error');
             }
-        } else if (response.code == 2) {//Ok
-
+        } else if (response.code == 2) {
+            //Ok
+            frm.reset();
+            console.log(response.data);
+            var newData = dt_user.row.add(response.data).draw(false).node();
+            console.log(newData);
+            $(newData).css({ backgroundColor: 'yellow' });
         }
     }).fail(function () {}).always(function () {
         $(frm).find('button[type="submit"] > i').removeClass(classSpinner).addClass(classSave);

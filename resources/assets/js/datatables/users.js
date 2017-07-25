@@ -11,9 +11,11 @@ let btnEditar = `
     </button>`;
 let classSpinner = 'fa-circle-o-notch fa-spin fa-fw';
 let classSave = 'fa-check-circle';
+
 let dt_user = $('#dt-users').DataTable({
     "ajax": config.url() + 'usuarios/show', //URL de datos
     "columns": [ //Atributos para la tabla
+
         {
             "data": "name",
         },
@@ -28,11 +30,25 @@ let dt_user = $('#dt-users').DataTable({
             defaultContent: btnEditar,
         }
     ],
+    "columnDefs": [{
+        //"targets": [2],
+        //"visible": false,
+        //"searchable": false
+    }, {
+        "targets": [-1],
+        "orderable": false,
+    }, ]
 });
+
 $('#frmUserModal').on('show.bs.modal', function(e) {
-    //Limpiar formulario
+    //Instanciar form
     let form = $(this).find('form');
+    //Limpiar formulario
     form[0].reset();
+    //Limpiar clases
+    $(this).find('.form-group').removeClass('has-error').removeClass('has-success');
+    //Remover mensajes
+    $('.form-group').find('.help-block').remove();
     //Asignar titulo
     let modal = this.id;
     let btnModal = e.relatedTarget;
@@ -87,6 +103,11 @@ $('#frm-user').on('submit', function(e) {
                         .addClass('has-error');
                 }
             } else if (response.code == 2) { //Ok
+                frm.reset();
+                console.log(response.data);
+                let newData = dt_user.row.add(response.data).draw(false).node();
+                console.log(newData);
+                $(newData).css({ backgroundColor: 'yellow' });
 
             }
         })

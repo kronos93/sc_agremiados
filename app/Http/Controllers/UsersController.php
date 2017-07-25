@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 class UsersController extends Controller
@@ -31,14 +32,26 @@ class UsersController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
-        if ($validator->fails()) {
-            
-            $response = new \stdClass();
+        $response = new \stdClass();
+
+        if ($validator->fails()) {            
             $response->data = $validator->errors();
-            $response->code = 4; //Error
+            $response->code = 4; //Error de validación
             return response()->json($response);
         } else {
-            dd('Deberia funcionar valido');
+            $user = new User();
+            $user->name = $request->input('name');
+            $user->f_last_name = $request->input('f_last_name');
+            $user->m_last_name = $request->input('m_last_name');
+            $user->email = $request->input('email');
+            $user->password =  Hash::make($request->input('password'));
+            if($user->save()){
+                $response->data = $user;
+                $response->code = 2; //Error de validación
+                return response()->json($response);
+            } else {
+
+            }
         }
     }
 
