@@ -9,6 +9,6 @@ if ($('#dt-users').length > 0) {
         .catch(error => { console.log("Sucedio un error al importar el módulo de DataTables"); });
         await
         import ( /* webpackChunkName: "dt-users" */ './datatables/users')
-        .catch(error => { console.log("Sucedio un error al importar el módulo de DataTables"); });
+        .catch(error => { console.log("Sucedio un error al importar el módulo de Usuarios" + error); });
     })();
 }

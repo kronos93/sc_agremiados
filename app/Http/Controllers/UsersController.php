@@ -9,6 +9,10 @@ use App\User;
 
 class UsersController extends Controller
 {
+    public function __construct() 
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +51,7 @@ class UsersController extends Controller
             $user->password =  Hash::make($request->input('password'));
             if($user->save()){
                 $response->data = $user;
-                $response->code = 2; //Error de validación
+                $response->code = 2; //Todo va bien
                 return response()->json($response);
             } else {
 
@@ -77,7 +81,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -87,9 +91,32 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+         $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            //'password' => 'required|string|min:6|confirmed',
+        ]);
+        $response = new \stdClass();
+
+        if ($validator->fails()) {            
+            $response->data = $validator->errors();
+            $response->code = 4; //Error de validación
+            return response()->json($response);
+        } else {
+            $user = User::where('id',$request->input('id'))->first();
+            $user->name = $request->input('name');
+            $user->f_last_name = $request->input('f_last_name');
+            $user->m_last_name = $request->input('m_last_name');
+            $user->email = $request->input('email');
+            $user->save(); 
+
+            $response->data = $user;
+            $response->code = 2; //Error de validación
+            return response()->json($response);
+        }
+       
     }
 
     /**

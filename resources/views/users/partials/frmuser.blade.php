@@ -8,7 +8,7 @@
                 <h4 class="modal-title" id="frmUserModalLabel"></h4>
             </div>
             <div class="modal-body">
-                
+                <input type="hidden" name="id" id="id"/>
                 <div class="form-group">
                     <label for="name" class="col-md-4 control-label">Nombre</label>
                     <div class="col-md-6">
@@ -36,7 +36,11 @@
                         <input id="email" type="email" class="form-control" name="email" value="" required />
                     </div>
                 </div>
-
+                <div class="form-group" id="container-update-password">
+                    <div class="col-md-offset-4 col-md-6">
+                        <label><input type="checkbox" value="" name="update-password" id="update-password"> Edición de contraseña</label>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="password" class="col-md-4 control-label">Contraseña</label>
                     <div class="col-md-6">

@@ -38,7 +38,7 @@ let config = function(env) {
         },
         entry: {
             vendor: [
-                'bootstrap/dist/js/bootstrap.js', 'admin-lte/dist/js/app.js'
+                'bootstrap/dist/js/bootstrap.js', 'admin-lte/dist/js/app.js', 'moment',
             ],
             app: [
                 './sass/app.scss',

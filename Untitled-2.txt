@@ -1,0 +1,48 @@
+
+class FrmGeneric {
+    constructor(config) {
+        this.modal = $(config.modal);
+        on_show_modal(this.modal);
+    }
+    on_show_modal() {
+        this.modal.on('show.bs.modal', function(e) {
+            //Instanciar form
+            // let form = $(this).find('form');
+            // //Limpiar formulario
+            // form[0].reset();
+            // //Limpiar clases
+            // $(form).find('.form-group').removeClass('has-error').removeClass('has-success');
+            // //Remover mensajes
+            // $('.form-group').find('.help-block').remove();
+            // //Asignar titulo
+            // let modal = this.id;
+            // let btnModal = e.relatedTarget;
+            // let titleModal = btnModal.dataset.modalTitle;
+            // $('#' + modal + 'Label').empty().text(titleModal);
+            // if (btnModal.dataset.option === 'edit') {
+            //     //console.log('Editar');
+            //     // let dtRow = $(btnModal).closest('tr').hasClass('child') ? $(btnModal).closest('tr').prev('tr.parent') : $(btnModal).parents('tr');
+            //     // let data = dt_user.row(dtRow).data();
+            //     // for (let key in data) {
+            //     //     //console.log(key + ' ' + data[key]);
+            //     //     form.find('#' + key).val(data[key]);
+            //     // }
+            // }
+            // if (btnModal.dataset.option === 'add') {
+            //     // //console.log('Agregar');
+            //     // $.ajaxSetup({
+            //     //     headers: {
+            //     //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            //     //     }
+            //     // });
+            // }
+        });
+    }
+}
+
+let frm = new FrmGeneric({
+    modal: '#frmUserModal'
+});
+frm.on_show_modal = function() {
+    console.log(this);
+};
