@@ -16,12 +16,15 @@ Route::get('/', function () {
 });
 
 Route::resource('agremiados','MembersController');
-/* Route::resource('usuarios','UsersController'); */
-Route::get('usuarios',['as'=>'usuarios.index','uses'=>'UsersController@index']);
-Route::get('usuarios/{id}',['as'=>'usuarios.show','uses'=>'UsersController@show']);
-Route::post('usuarios/store',['as'=>'usuarios.store','uses'=>'UsersController@store']);
-Route::post('usuarios/update',['as'=>'usuarios.update','uses'=>'UsersController@update']);
-//Route::post('users/create',['as'=>'users.store','uses'=>'UserController@store']);
+
+Route::prefix('usuarios')->group(function () {
+    $controller = 'UsersController';
+    Route::get('/',"{$controller}@index")->name('users.index');
+    Route::get('/{id}',"{$controller}@show")->name('users.show');
+    Route::post('/store',"{$controller}@store")->name('users.store');
+    Route::post('/update',"{$controller}@update")->name('users.update');
+});
+
 Auth::routes();
 
 Route::get('/menu', 'HomeController@index')->name('menu');

@@ -10,7 +10,7 @@
 
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; {{  \Carbon\Carbon::now()->format('Y') }} <a href="#">CooxToWeb</a>.</strong> Todos los derechos reservados.
+            <strong>Copyright &copy; {{  \Carbon\Carbon::now()->format('Y') }} <a href="http://devexteam.com" target="_blank">[Devex]<sub>Team</sub></a>.</strong> Todos los derechos reservados.
         </footer>
 
         <!-- Control Sidebar -->

@@ -41,6 +41,7 @@ class UsersController extends Controller
         if ($validator->fails()) {            
             $response->data = $validator->errors();
             $response->code = 4; //Error de validación
+            $response->msg = 'Error de validación';
             return response()->json($response);
         } else {
             $user = new User();
@@ -52,9 +53,13 @@ class UsersController extends Controller
             if($user->save()){
                 $response->data = $user;
                 $response->code = 2; //Todo va bien
+                $response->msg = 'Datos aceptados';
                 return response()->json($response);
             } else {
-
+                $response->data = [];
+                $response->code = 49; //Error general
+                $response->msg = 'Algo salió mal, verifique sus datos y conexión a Internet';
+                return response()->json($response);
             }
         }
     }
@@ -93,7 +98,7 @@ class UsersController extends Controller
      */
     public function update(Request $request)
     {
-         $validator = Validator::make($request->all(), [
+        /* $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             //'password' => 'required|string|min:6|confirmed',
@@ -115,8 +120,14 @@ class UsersController extends Controller
             $response->data = $user;
             $response->code = 2; //Error de validación
             return response()->json($response);
-        }
-       
+        } */
+        //$request->input('id')
+        $users = User::where('id',1)->get();
+        $user = $users->first();
+        //dd($user->isEmpty());
+        $user->name = "JOSEEE1!!";
+        $user->save(); 
+        dd($user);
     }
 
     /**

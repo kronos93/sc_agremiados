@@ -54,26 +54,32 @@ var dt_user = $('#dt-users').DataTable({
 //Desbloquear input contraseña
 $('#btn-storage-user').on('click', function () {
     $('#container-update-password').hide();
+    $('#password').closest('.form-group').removeClass('not-validate');
+    $('#password-confirm').closest('.form-group').removeClass('not-validate');
     $('#password').attr('disabled', false);
     $('#password-confirm').attr('disabled', false);
 });
 //Bloquear input de contraseña
 $('#dt-users').on('click', 'button.btn-update-user', function () {
     $('#container-update-password').show();
+    $('#password').closest('.form-group').addClass('not-validate');
+    $('#password-confirm').closest('.form-group').addClass('not-validate');
     $('#password').attr('disabled', true);
     $('#password-confirm').attr('disabled', true);
 });
 //Validar check para activar o desactivar input contraseña
 $('#update-password').on('click', function () {
-    if (this.checked) {
-        //Cambiar contraseña
-        $('#password').attr('disabled', !this.checked);
-        $('#password-confirm').attr('disabled', !this.checked);
+    var active_change_password = this.checked;
+    if (active_change_password) {
+        $('#password').closest('.form-group').removeClass('not-validate');
+        $('#password-confirm').closest('.form-group').removeClass('not-validate');
     } else {
-        //No cambiar contraseña
-        $('#password').attr('disabled', !this.checked);
-        $('#password-confirm').attr('disabled', !this.checked);
+        $('#password').closest('.form-group').addClass('not-validate');
+        $('#password-confirm').closest('.form-group').addClass('not-validate');
     }
+
+    $('#password').attr('disabled', !active_change_password);
+    $('#password-confirm').attr('disabled', !active_change_password);
 });
 
 var FrmGeneric = function () {
@@ -147,19 +153,19 @@ var FrmGeneric = function () {
                     data: data,
                     method: "post",
                     beforeSend: function beforeSend(xhr) {
-                        $('.form-group').addClass('has-success'); //Todos son ok
+                        $('.form-group').not('.not-validate').addClass('has-success'); //Todos son ok
                         that.frm.find('button[type="submit"] > i').removeClass(that.classSave).addClass(that.classSpinner);
                     }
                 }).done(function (response) {
                     if (response.code == 4) {
                         //Error
-                        $('.form-group').removeClass('has-error').addClass('has-success');
+                        $('.form-group').removeClass('has-error').not('.not-validate').addClass('has-success');
                         $('.form-group.has-success').find('.help-block').remove();
                         for (var key in response.data) {
                             var input = $('#' + key);
                             input.next().remove();
                             input.after('\n                                <span class="help-block">\n                                    <strong>' + response.data[key] + '</strong>\n                                </span>\n                                ').closest('.form-group') //Asignar error
-                            .removeClass('has-success').addClass('has-error');
+                            .not('.not-validate').removeClass('has-success').addClass('has-error');
                         }
                     } else if (response.code == 2) {
                         //Ok

@@ -36,9 +36,9 @@
                         <input id="email" type="email" class="form-control" name="email" value="" required />
                     </div>
                 </div>
-                <div class="form-group" id="container-update-password">
+                <div class="form-group not-validate" id="container-update-password">
                     <div class="col-md-offset-4 col-md-6">
-                        <label><input type="checkbox" value="" name="update-password" id="update-password"> Edición de contraseña</label>
+                        <label><input type="checkbox" value="" name="update-password" class="" id="update-password"> Edición de contraseña</label>
                     </div>
                 </div>
                 <div class="form-group">
