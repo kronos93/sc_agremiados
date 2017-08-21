@@ -1,0 +1,15 @@
+<!-- split header.blade.php -->
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <title>@yield('title')</title>
+</head>
+
+<body @if (!Auth::guest()) class="hold-transition skin-blue sidebar-mini" style="height: auto;" @else class="skin-blue sidebar-collapse" @endif>

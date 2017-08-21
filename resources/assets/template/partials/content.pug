@@ -1,0 +1,96 @@
+<div class="wrapper" @if (!Auth::guest()) style="height: auto;" @endif>
+    include main.header.pug
+    include main.sidebar.pug
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <!-- <section class="content-header">
+            <h1>
+                Page Header
+                <small>Optional description</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                <li class="active">Here</li>
+            </ol>
+        </section> -->
+
+        <!-- Main content -->
+        <section class="content">
+            <!-- split stop -->
+            <table id="example-dt" class="display responsive nowrap" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Apellidos</td>
+                        <td>Dirección</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XXXXXXXX</td>
+                        <td>XXXXXXXX XXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXX</td>
+                        <td>XXXXXXXX XXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXX</td>
+                        <td>XXXXXXXX XXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXX</td>
+                        <td>XXXXXXXX XXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+
+            <table id="example2-dt" class="display responsive nowrap" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Apellidos</td>
+                        <td>Dirección</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XXXXXXXX</td>
+                        <td>XXXXXXXX XXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXX</td>
+                        <td>XXXXXXXX XXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXX</td>
+                        <td>XXXXXXXX XXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXX</td>
+                        <td>XXXXXXXX XXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <!-- split footer.blade.php -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    include main.footer.pug
+    include control.sidebar.pug
+    <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>

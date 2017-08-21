@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -95,8 +95,8 @@ var FrmGeneric = function () {
         this.option = null;
         this.url_update = config.url_update;
         this.url_store = config.url_store;
-        this.classSpinner = 'fa-circle-o-notch fa-spin fa-fw';
-        this.classSave = 'fa-check-circle';
+        this.classSpinner = 'fa-circle-o-notch fa-spin fa-fw'; //Clase FontAwesome
+        this.classSave = 'fa-check-circle'; //Clase FontAwesome
         if (config.useGeneric == true) {
             this.onShowModal();
             this.handleSubmit();

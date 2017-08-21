@@ -13,10 +13,7 @@
     data-option="store">
     <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> Añadir usuario
   </button></h1>
-  
 </div>
-
-
 <table id="dt-users" class="display responsive nowrap" cellspacing="0" width="100%">
     <thead>
         <tr>
@@ -32,7 +29,5 @@
     <tfoot></tfoot>
 </table>
 <!-- Button trigger modal -->
-
-
 @include('users.partials.frmuser')
 @endsection

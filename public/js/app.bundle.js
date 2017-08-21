@@ -572,49 +572,49 @@ module.exports = (
 /* 144 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/glyphicons-halflings-regular.eot";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/glyphicons-halflings-regular.eot";
 
 /***/ }),
 /* 145 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/fontawesome-webfont.eot";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/fontawesome-webfont.eot";
 
 /***/ }),
 /* 146 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/fontawesome-webfont.eot";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/fontawesome-webfont.eot";
 
 /***/ }),
 /* 147 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/fontawesome-webfont.woff2";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/fontawesome-webfont.woff2";
 
 /***/ }),
 /* 148 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/fontawesome-webfont.woff";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/fontawesome-webfont.woff";
 
 /***/ }),
 /* 149 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/fontawesome-webfont.ttf";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/fontawesome-webfont.ttf";
 
 /***/ }),
 /* 150 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/fontawesome-webfont.svg";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/fontawesome-webfont.svg";
 
 /***/ }),
 /* 151 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/ionicons.eot";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/ionicons.eot";
 
 /***/ }),
 /* 152 */
@@ -1053,7 +1053,11 @@ var Config = function () {
     (0, _createClass3.default)(Config, [{
         key: 'url',
         value: function url() {
-            return window.location.origin + '/';
+            if (window.location.hostname === '192.168.0.4') {
+                return window.location.origin + '/sc_agremiados/public/';
+            } else if (window.location.hostname === 'scagremiados.local') {
+                return window.location.origin + '/';
+            }
         }
     }]);
     return Config;
@@ -1161,7 +1165,7 @@ exports.push([module.i, "/*!\n *   AdminLTE v2.3.8\n *   Author: Almsaeed Studio
 /* 179 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/img/boxed-bg.jpg";
+module.exports = "http://192.168.0.4/sc_agremiados/public/img/boxed-bg.jpg";
 
 /***/ }),
 /* 180 */
@@ -1195,13 +1199,13 @@ exports.push([module.i, "/* iCheck plugin Flat skin, blue\n---------------------
 /* 182 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/img/blue.png";
+module.exports = "http://192.168.0.4/sc_agremiados/public/img/blue.png";
 
 /***/ }),
 /* 183 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/img/blue@2x.png";
+module.exports = "http://192.168.0.4/sc_agremiados/public/img/blue@2x.png";
 
 /***/ }),
 /* 184 */
@@ -1277,31 +1281,31 @@ exports.push([module.i, "/*\n * Table styles\n */\ntable.dataTable {\n  width: 1
 /* 189 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/img/sort_both.png";
+module.exports = "http://192.168.0.4/sc_agremiados/public/img/sort_both.png";
 
 /***/ }),
 /* 190 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/img/sort_asc.png";
+module.exports = "http://192.168.0.4/sc_agremiados/public/img/sort_asc.png";
 
 /***/ }),
 /* 191 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/img/sort_desc.png";
+module.exports = "http://192.168.0.4/sc_agremiados/public/img/sort_desc.png";
 
 /***/ }),
 /* 192 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/img/sort_asc_disabled.png";
+module.exports = "http://192.168.0.4/sc_agremiados/public/img/sort_asc_disabled.png";
 
 /***/ }),
 /* 193 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/img/sort_desc_disabled.png";
+module.exports = "http://192.168.0.4/sc_agremiados/public/img/sort_desc_disabled.png";
 
 /***/ }),
 /* 194 */
@@ -1335,49 +1339,49 @@ exports.push([module.i, "@keyframes dtb-spinner {\n  100% {\n    transform: rota
 /* 196 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/glyphicons-halflings-regular.woff2";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/glyphicons-halflings-regular.woff2";
 
 /***/ }),
 /* 197 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/glyphicons-halflings-regular.woff";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/glyphicons-halflings-regular.woff";
 
 /***/ }),
 /* 198 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/glyphicons-halflings-regular.ttf";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/glyphicons-halflings-regular.ttf";
 
 /***/ }),
 /* 199 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/glyphicons-halflings-regular.svg";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/glyphicons-halflings-regular.svg";
 
 /***/ }),
 /* 200 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/ionicons.woff2";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/ionicons.woff2";
 
 /***/ }),
 /* 201 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/ionicons.woff";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/ionicons.woff";
 
 /***/ }),
 /* 202 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/ionicons.ttf";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/ionicons.ttf";
 
 /***/ }),
 /* 203 */
 /***/ (function(module, exports) {
 
-module.exports = "http://scagremiados.local/fonts/ionicons.svg";
+module.exports = "http://192.168.0.4/sc_agremiados/public/fonts/ionicons.svg";
 
 /***/ }),
 /* 204 */
@@ -1865,13 +1869,13 @@ if ($('#dt-users').length > 0) {
                 switch (_context.prev = _context.next) {
                     case 0:
                         _context.next = 2;
-                        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 240)).catch(function (error) {
+                        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 241)).catch(function (error) {
                             console.log("Sucedio un error al importar el módulo de DataTables");
                         });
 
                     case 2:
                         _context.next = 4;
-                        return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 241)).catch(function (error) {
+                        return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 242)).catch(function (error) {
                             console.log("Sucedio un error al importar el módulo de Usuarios" + error);
                         });
 
@@ -3563,29 +3567,7 @@ var $export = __webpack_require__(15);
 $export($export.S + $export.F * !__webpack_require__(5), 'Object', {defineProperty: __webpack_require__(8).f});
 
 /***/ }),
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */
+/* 240 */
 /***/ (function(module, exports) {
 
 module.exports = jQuery;

@@ -1,8 +1,9 @@
 let config = function(env) {
-    let publicPath = "http://scagremiados.local/";
+    let publicPath = "http://192.168.0.4/sc_agremiados/public/";
     const ExtractTextPlugin = require("extract-text-webpack-plugin");
     const HtmlWebpackPlugin = require('html-webpack-plugin');
     const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+    const OfflinePlugin = require("offline-plugin");
     //Funcion nativa de NODEJS
     const { resolve } = require('path');
     const webpack = require('webpack');
@@ -62,7 +63,10 @@ let config = function(env) {
                     test: /\.scss$/,
                     use: useConfigSass,
                 },
-
+                {
+                    test: /\.pug$/,
+                    loader: 'pug-loader'
+                },
                 //imagenes con file loader
                 {
                     test: /\.(png|jpe?g|gif)$/,
@@ -94,24 +98,38 @@ let config = function(env) {
 
             extractCSS,
             extractSASS,
-            new FaviconsWebpackPlugin({
-                logo: './icon.png',
 
-            }),
+            // new HtmlWebpackPlugin({
+            //     template: './template/template.html',
+            //     title: "<?= $title ?? 'App' ?>",
+            //     filename: '../resources/views/templates/template.blade.php',
+            // }),
             new HtmlWebpackPlugin({
-                template: './template/template.html',
-                title: "<?= $title ?>",
+                template: './template/app.pug',
                 filename: '../resources/views/templates/template.blade.php',
             }),
+            new FaviconsWebpackPlugin({
+                'logo': './icon.png',
+                'prefix': 'icons-[hash]/',
+                // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+                'background': "#4DB7BC",
+                // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+                'title': 'Sistema de control de agremiados',
+            }),
+
             //Exporta módulos compartidos por entrada
             new webpack.optimize.CommonsChunkPlugin({
                 name: "vendor",
             }),
+            new CleanWebpackPlugin('./public/appcache/*'),
             new CleanWebpackPlugin('./public/css/*'),
             new CleanWebpackPlugin('./public/icons/*'),
             new CleanWebpackPlugin('./public/fonts/*'),
             new CleanWebpackPlugin('./public/js/*'),
             new GulpWebpackSplitHtmlPlugin(),
+            // new OfflinePlugin({
+            //     caches: 'all'
+            // }),
         ],
         stats: (isProduction) ? 'errors-only' : 'detailed',
     };

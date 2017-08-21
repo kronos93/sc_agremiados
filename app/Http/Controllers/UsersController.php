@@ -33,7 +33,7 @@ class UsersController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:6|confirmed',
         ]);
         $response = new \stdClass();
@@ -86,7 +86,6 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        
     }
 
     /**
@@ -98,9 +97,9 @@ class UsersController extends Controller
      */
     public function update(Request $request)
     {
-        /* $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users,email,'.$request->input('id'),
             //'password' => 'required|string|min:6|confirmed',
         ]);
         $response = new \stdClass();
@@ -120,14 +119,7 @@ class UsersController extends Controller
             $response->data = $user;
             $response->code = 2; //Error de validación
             return response()->json($response);
-        } */
-        //$request->input('id')
-        $users = User::where('id',1)->get();
-        $user = $users->first();
-        //dd($user->isEmpty());
-        $user->name = "JOSEEE1!!";
-        $user->save(); 
-        dd($user);
+        } 
     }
 
     /**
