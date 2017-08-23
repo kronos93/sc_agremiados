@@ -69,5 +69,5 @@
 </aside>
 <!-- /.control-sidebar --><!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
 <div class="control-sidebar-bg"></div>
-</div>   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script type="text/javascript" src="http://192.168.0.4/sc_agremiados/public/js/vendor.bundle.js"></script><script type="text/javascript" src="http://192.168.0.4/sc_agremiados/public/js/app.bundle.js"></script></body>
+</div>   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script type="text/javascript" src="./js/vendor.bundle.js"></script><script type="text/javascript" src="./js/app.bundle.js"></script></body>
 </html>

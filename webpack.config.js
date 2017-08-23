@@ -1,5 +1,5 @@
 let config = function(env) {
-    let publicPath = "http://192.168.0.4/sc_agremiados/public/";
+    let publicPath = "./";
     const ExtractTextPlugin = require("extract-text-webpack-plugin");
     const HtmlWebpackPlugin = require('html-webpack-plugin');
     const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -82,7 +82,7 @@ let config = function(env) {
                     loader: 'file-loader',
                     options: {
                         name: "fonts/[name].[ext]",
-                        publicPath: publicPath,
+                        publicPath: '../',
                     }
                 },
                 //Configuración especial para datatables y archivos.js
